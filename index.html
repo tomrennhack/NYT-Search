@@ -13,7 +13,7 @@
 <body>
     <div class="jumbotron col-lg-8 mx-auto text-center"
         style="background-color: rgb(30,30,60); border-radius: 10px; color: white;">
-        <h1>New York Times Search</h1>
+        <h1><i class="fa fa-newspaper"></i> New York Times Search</h1>
     </div>
     <div class="row" id="search-parameters">
         <div class="col-lg-8 mx-auto">
@@ -28,7 +28,7 @@
                     </div>
                     <div class="form-group">
                         <label for="number-of-records">Number of Records to Retrieve</label>
-                        <input type="text" class="form-control" id="number-of-records">
+                        <input type="number" step="1" class="form-control" id="number-of-records">
                     </div>
                     <div class="form-group">
                         <label for="start-yr">Start Year (Optional)</label>
@@ -39,8 +39,10 @@
                         <input type="text" class="form-control" id="end-yr">
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-secondary" id="search-button"><i class="fa fa-search"></i> Search </button>
-                        <button class="btn btn-secondary" type="submit" value="Clear Results" id="clear-results-button">
+                        <button class="btn btn-secondary" id="search-button"><i class="fa fa-search"></i> Search
+                        </button>
+                        <button class="btn btn-secondary" id="clear-results-button"><i class="fa fa-trash"></i> Clear
+                            Results </button>
                     </div>
                 </form>
             </div>
@@ -49,6 +51,7 @@
     <div class="row" id="top-articles"></div>
 
     <script src="https://kit.fontawesome.com/768efcae0e.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 
 </html>
