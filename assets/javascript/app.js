@@ -15,11 +15,11 @@ var searchNYT = function search () {
         console.log(response);
       });
     };
+    searchNYT();
+// console.log(response);
 });
 
-searchNYT();
 
-console.log(response);
 
 
 
