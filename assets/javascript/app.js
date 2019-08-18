@@ -1,15 +1,14 @@
 $(document).ready(function() {
 
-
   // onclick CLEAR ==============================================
 
-  $("#search-button").on("click", function(event) {
+  $("#clear-results-button").on("click", function(event) {
 
     event.preventDefault();
     // empty the current top-articles div
     $("#top-articles").empty();
 
-  });
+  }); // end clear-results-button
 
   // onclick SEARCH =============================================
   $("#search-button").on("click", function(event) {
@@ -17,19 +16,15 @@ $(document).ready(function() {
     event.preventDefault();
     // empty the current top-articles div
     $("#top-articles").empty();
-    // append a new top-article div to the card-header element
+    // add a new top-article div after the card-header element
     var topArticlesDiv = "<div class='card-body' id='top-articles'";
     $(".card-header").after(topArticlesDiv);
 
     // fetch form values
     var search = $("#search-term").val().trim();
-    console.log(search);
     var records = $("#number-of-records").val();
-    console.log(records);
     var startYear = $("#start-yr").val().trim();
-    console.log(startYear);
     var endYear = $("#end-yr").val().trim();
-    console.log(endYear);
 
   // build queryURL
   var apiKey = "GAN5Vuqp6dyl6vNHxlmwbLizhaZMVVf6";
@@ -39,8 +34,6 @@ $(document).ready(function() {
         url: queryURL,
         method: "GET"
       }).then(function(results) {
-
-      console.log(results.response.docs[0].headline.main);
 
       for ( var i = 0 ; i < records ; i++ ) {
 
@@ -75,6 +68,7 @@ $(document).ready(function() {
 
         // append to the top-articles div
         topArticlesDiv.append(pHeadline).append(pByline).append(pAbstract).append(pLeadPara).append(pSection).append(pSubsection).append(pWebURL).append(pPubDate).append(divider);
+
         }; // end for loop
       }); // end then
     }); // end onclick event
