@@ -7,6 +7,9 @@ $(document).ready(function() {
     event.preventDefault();
     // empty the current top-articles div
     $("#top-articles").empty();
+    // add a new top-article div after the card-header element
+    var topArticlesDiv = "<div class='card-body' id='top-articles'";
+    $(".card-header").after(topArticlesDiv);
 
   }); // end clear-results-button
 
