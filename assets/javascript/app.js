@@ -31,7 +31,7 @@ $(document).ready(function() {
 
   // build queryURL
   var apiKey = "GAN5Vuqp6dyl6vNHxlmwbLizhaZMVVf6";
-  var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + search + "&api-key=" + apiKey;
+  var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + search + "&start_year=" + startYear + "&end_year=" + endYear + "&api-key=" + apiKey;
   
    $.ajax({
         url: queryURL,
