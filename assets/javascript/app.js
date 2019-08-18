@@ -8,20 +8,19 @@ $(document).ready(function() {
     // empty the current top-articles div
     $("#top-articles").empty();
     // add a new top-article div after the card-header element
-    var topArticlesDiv = "<div class='card-body' id='top-articles'";
-    $(".card-header").after(topArticlesDiv);
+    // var topArticlesDiv = "<div class='card-body' id='top-articles'";
+    // $("#top-articles-header").after(topArticlesDiv);
 
   }); // end clear-results-button
 
+
   // onclick SEARCH =============================================
+
   $("#search-button").on("click", function(event) {
 
     event.preventDefault();
     // empty the current top-articles div
     $("#top-articles").empty();
-    // add a new top-article div after the card-header element
-    var topArticlesDiv = "<div class='card-body' id='top-articles'>";
-    $("#top-articles-header").after(topArticlesDiv);
 
     // fetch form values
     var search = $("#search-term").val().trim();
