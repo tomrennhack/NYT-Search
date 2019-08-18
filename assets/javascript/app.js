@@ -21,13 +21,15 @@ $(document).ready(function() {
     $("#top-articles").empty();
     // add a new top-article div after the card-header element
     var topArticlesDiv = "<div class='card-body' id='top-articles'>";
-    $(".card-header").after(topArticlesDiv);
+    $("#top-articles-header").after(topArticlesDiv);
 
     // fetch form values
     var search = $("#search-term").val().trim();
     var records = $("#number-of-records").val();
     var startYear = $("#start-yr").val().trim();
+    console.log("start year: " + startYear);
     var endYear = $("#end-yr").val().trim();
+    console.log("end year: " + endYear);
 
   // build queryURL
   var apiKey = "GAN5Vuqp6dyl6vNHxlmwbLizhaZMVVf6";
