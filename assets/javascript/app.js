@@ -66,7 +66,8 @@ $(document).ready(function() {
         var pSubsection = $("<p>").html("<b>Subsection</b>: " + subsection);
 
         var webURL = results.response.docs[i].web_url;
-        var pWebURL = $("<p>").html("<b>Web URL</b>: " + webURL);
+        var aWebURL = "<a href='" + webURL + "'>" + headline + "</a>";
+        var pWebURL = $("<p>").html("<b>Web URL</b>: " + aWebURL);
 
         var divider = $("<hr>");
 
