@@ -7,10 +7,6 @@ $(document).ready(function() {
     event.preventDefault();
     // empty the current top-articles div
     $("#top-articles").empty();
-    // add a new top-article div after the card-header element
-    // var topArticlesDiv = "<div class='card-body' id='top-articles'";
-    // $("#top-articles-header").after(topArticlesDiv);
-
   }); // end clear-results-button
 
 
@@ -25,20 +21,22 @@ $(document).ready(function() {
     // fetch form values
     var search = $("#search-term").val().trim();
     var records = $("#number-of-records").val();
-    var startYear = $("#start-yr").val().trim();
+    var sYear = $("#start-yr").val().trim();
+    var startYear = sYear + "0101";
     console.log("start year: " + startYear);
-    var endYear = $("#end-yr").val().trim();
+    var eYear = $("#end-yr").val().trim();
+    var endYear = eYear + "1231";
     console.log("end year: " + endYear);
 
   // build queryURL
   var apiKey = "GAN5Vuqp6dyl6vNHxlmwbLizhaZMVVf6";
-  var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + search + "&start_year=" + startYear + "&end_year=" + endYear + "&api-key=" + apiKey;
+  var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + search + "&begin_date=" + startYear + "&end_date=" + endYear + "&api-key=" + apiKey;
   
    $.ajax({
         url: queryURL,
         method: "GET"
       }).then(function(results) {
-
+        console.log(queryURL);
       for ( var i = 0 ; i < records ; i++ ) {
 
         //  keys to capture
