@@ -25,6 +25,7 @@ $(document).ready(function() {
     var startYear = sYear.length > 0 ? "&start_date=" + sYear + "0101" : "";
     var eYear = $("#end-yr").val().trim();
     var endYear = eYear.length > 0 ? "&end_date=" + eYear + "1231" : "";
+    var pByline = "";
 
   // build queryURL
   var apiKey = "GAN5Vuqp6dyl6vNHxlmwbLizhaZMVVf6";
@@ -44,7 +45,10 @@ $(document).ready(function() {
         var pHeadline = $("<h5>").html(headline);
 
         var byline = results.response.docs[i].byline.original;
-        var pByline = $("<p>").html("<b>Byline</b>: " + byline);
+        console.log(byline);
+        if (byline != null) {
+          pByline = $("<p>").html("<b>Byline</b>: " + byline);
+        }
 
         var abstract = results.response.docs[i].abstract;
         var pAbstract = $("<p>").html("<b>Abstract</b>: " + abstract);
